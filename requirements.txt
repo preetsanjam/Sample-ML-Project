@@ -1,0 +1,5 @@
+# This is a sample requirements.txt file
+# It lists all dependencies required for a Python project
+
+langchain
+numpy

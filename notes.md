@@ -9,3 +9,7 @@ conda create -p venv python==3.12
 conda create -n myenv python=3.12
 ```
 `-n` creates the virtual environment in Conda's default environment directory. 
+
+```
+pip install -r requirements.txt
+```
