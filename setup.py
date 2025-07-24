@@ -8,7 +8,7 @@ of your project such as its metadata, dependencies and more.
 from setuptools import find_packages, setup
 from typing import List
 
-def get_requirements()-›List[str]
+def get_requirements()->List[str]:
     '''
     This function will return the list of requirements
     '''
