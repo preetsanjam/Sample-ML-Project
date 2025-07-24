@@ -24,7 +24,7 @@
     - We can import from it
     - Python will recognize its submodules and subpackages
 
- - `-e .` triggers `setup.py` to install our package in editable mode, making it easier to develop and test changes without reinstalling the package.
+ - `-e .` triggers `setup.py` or `pyproject.toml` to install our package in editable mode, making it easier to develop and test changes without reinstalling the package.
  - The `Sample_Project.egg-info` folder is **metadata** about our Python package. It is created when we install our project using:
     ```
     pip install -e .
