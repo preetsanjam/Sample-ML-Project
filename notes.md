@@ -37,3 +37,9 @@
 
     - Even though Eggs aren't commonly used anymore, the `.egg-info` structure is still used by `setuptools` to store metadata.
 
+- What `-e .` does?
+    
+    - `-e` stands for editable install.
+    - The `.` refers to the current directory (your project folder).
+    - So `-e .` tells pip to install the current project in editable mode using `pyproject.toml` or `setup.py`. 
+
