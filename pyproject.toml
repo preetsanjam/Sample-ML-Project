@@ -1,0 +1,31 @@
+# The pyproject.toml is much more efficient that the setup.py file
+
+[build-system]
+# This section tells build tools what is required to build the package
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# Basic metadata
+name = "my-awesome-project"
+version = "0.1.0"
+description = "A brief description about my awesome project"
+readme = "README.md"
+# We can point to a file or include inline text for the licence
+license = {file = "LICENSE"}
+
+# Author information
+authors = [
+    {name = "Sanjam Preet", email = "sanjam.preet@gmail.com"}
+]
+
+# Project dependencies
+dependencies = [
+    "requests>=2.25",
+    "numpy>=1.20"
+]
+
+# Optional: URL linked to the project
+[project.urls]
+Homepage = "https://example.com"
+Repository = "https://gitbub.com/example/my-awesome-project"

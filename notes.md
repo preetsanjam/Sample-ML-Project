@@ -21,16 +21,16 @@
     Put simply, the `setup.py` file contains the instructions to build, package and distribute a Python project. 
 
 - The file `__init__.py` tells Python that the folder (`src`) it resides in should be treated as a package. We mean that the `src` folder is now a Python package, meaning:
-    - You can import from it
+    - We can import from it
     - Python will recognize its submodules and subpackages
 
  - `-e .` triggers `setup.py` to install our package in editable mode, making it easier to develop and test changes without reinstalling the package.
- - The `Sample_Project.egg-info` folder is **metadata** about your Python package. It is created when we install our project using:
+ - The `Sample_Project.egg-info` folder is **metadata** about our Python package. It is created when we install our project using:
     ```
     pip install -e .
     ```
     
-    `Sample_Project.egg-info` is an internal **metadata folder** created by setuptools when installing the local package. It helps tools understand and manage the package.
+    `Sample_Project.egg-info` is an internal **metadata folder** created by `setuptools` when installing the local package. It helps tools understand and manage the package.
 
     **Why is it called "egg-info"?**
     - It comes from the old Python packaging format called "Eggs", which has now largely been replaced by Wheels (`.whl`).
