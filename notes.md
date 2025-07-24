@@ -18,11 +18,22 @@
 
 - The `setup.py` file is responsible for defining the configuration and metadata needed to package and distribute a Python project.
 
-    Put simply, the `setup.py` file contains the instructions to build, package, and distribute a Python project. 
+    Put simply, the `setup.py` file contains the instructions to build, package and distribute a Python project. 
 
 - The file `__init__.py` tells Python that the folder (`src`) it resides in should be treated as a package. We mean that the `src` folder is now a Python package, meaning:
     - You can import from it
     - Python will recognize its submodules and subpackages
 
- - `-e .` triggers `setup.py` to install your package in editable mode, making it easier to develop and test changes without reinstalling the package.
+ - `-e .` triggers `setup.py` to install our package in editable mode, making it easier to develop and test changes without reinstalling the package.
+ - The `Sample_Project.egg-info` folder is **metadata** about your Python package. It is created when we install our project using:
+    ```
+    pip install -e .
+    ```
+    
+    `Sample_Project.egg-info` is an internal **metadata folder** created by setuptools when installing the local package. It helps tools understand and manage the package.
+
+    **Why is it called "egg-info"?**
+    - It comes from the old Python packaging format called "Eggs", which has now largely been replaced by Wheels (`.whl`).
+
+    - Even though Eggs aren't commonly used anymore, the `.egg-info` structure is still used by `setuptools` to store metadata.
 
