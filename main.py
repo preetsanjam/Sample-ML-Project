@@ -11,3 +11,4 @@ if __name__=="__name__":
     
     # Initializing Data Ingestion
     data_ingestion=DataIngestion()
+    train_data, test_data=data_ingestion.initiate_data_ingestion()
