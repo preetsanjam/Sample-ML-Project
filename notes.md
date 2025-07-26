@@ -43,3 +43,5 @@
     - The `.` refers to the current directory (your project folder).
     - So `-e .` tells pip to install the current project in editable mode using `pyproject.toml` or `setup.py`. 
 
+- **Data ingestion** means reading the data from databases. For reading the data, we need a data path and a database configuration. Data ingestion configuration will have the information about the data path and the database configuration
+
