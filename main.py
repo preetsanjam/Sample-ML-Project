@@ -2,9 +2,12 @@ from src.logging import logger
 from src.exception.exception import ProjectException
 import sys
 
-#print(logger.logging.info("Hello test log"))
+from src.components.dataingestion import DataIngestion
+from src.components.dataingestion import DataIngestionArtifact
+from src.components.dataingestion import DataIngestionConfig
 
-try:
-    print(1/0)
-except Exception as e:
-    raise ProjectException(e, sys)
+# Executing all funcationalities 
+if __name__=="__name__":
+    
+    # Initializing Data Ingestion
+    data_ingestion=DataIngestion()
