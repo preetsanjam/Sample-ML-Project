@@ -7,7 +7,7 @@ from src.components.dataingestion import DataIngestionArtifact
 from src.components.dataingestion import DataIngestionConfig
 
 # Executing all funcationalities 
-if __name__=="__name__":
+if __name__=="__main__":
     
     # Initializing Data Ingestion
     data_ingestion=DataIngestion()

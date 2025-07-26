@@ -22,36 +22,36 @@ class DataIngestion:
         self.ingestion_config=DataIngestionConfig()
         self.artifact_config=DataIngestionArtifact()
 
-def initiate_data_ingestion(self):
-    logger.logging.info("Data Ingestion started")
-    try:
-        # Reading the data
-        df=pd.read_csv("notebooks/data.csv")
+    def initiate_data_ingestion(self):
+        logger.logging.info("Data Ingestion started")
+        try:
+            # Reading the data
+            df=pd.read_csv("notebooks/data.csv")
+            
+            # Logging dataset being read
+            logger.logging.info("Dataset read")
+            
+            # Creating ingestion folder
+            os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path), exist_ok=True)
+            
+            # Creating artifact folder
+            os.makedirs(os.path.dirname(self.artifact_config.train_data_path), exist_ok=True)
+            
+            df.to_csv(self.ingestion_config.raw_data_path, index=False)
+            
+            # Train-test split
+            train_set, test_set=train_test_split(df, test_size=0.2, random_state=42)
+            
+            # Saving train set 
+            train_set.to_csv(self.artifact_config.train_data_path)
+            
+            # Saving test set
+            test_set.to_csv(self.artifact_config.test_data_path)
+            
+            return (
+                self.artifact_config.train_data_path,
+                self.artifact_config.test_data_path
+            )
         
-        # Logging dataset being read
-        logger.logging.info("Dataset read")
-        
-        # Creating ingestion folder
-        os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path), exist_ok=True)
-        
-        # Creating artifact folder
-        os.makedirs(os.path.dirname(self.artifact_config.train_data_path), exist_ok=True)
-        
-        df.to_csv(self.ingestion_config.raw_data_path, index=False)
-        
-        # Train-test split
-        train_set, test_set=train_test_split(df, test_size=0.2, random_state=42)
-        
-        # Saving train set 
-        train_set.to_csv(self.artifact_config.train_data_path)
-        
-        # Saving test set
-        test_set.to_csv(self.artifact_config.test_data_path)
-        
-        return (
-            self.artifact_config.train_data_path,
-            self.artifact_config.test_data_path
-        )
-    
-    except Exception as e:
-        raise ProjectException(e, sys) 
+        except Exception as e:
+            raise ProjectException(e, sys) 
