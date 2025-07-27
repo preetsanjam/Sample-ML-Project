@@ -43,5 +43,18 @@
     - The `.` refers to the current directory (your project folder).
     - So `-e .` tells pip to install the current project in editable mode using `pyproject.toml` or `setup.py`. 
 
-- **Data ingestion** means reading the data from databases. For reading the data, we need a data path and a database configuration. Data ingestion configuration will have the information about the data path and the database configuration
+### **ML Project Lifecycle**
+- **Data ingestion** means reading the data from databases. For reading the data, we need a data path and a database configuration. **Data ingestion configuration** will have the information about the data path and the database configuration.
 
+    After having read the data, we split the data into:
+    - Train set
+    - Test set
+    - Validation set 
+    
+    The output of data ingestion configuration will be a **data ingestion artifact**. 
+
+- **Data validation**: To validate the data, we require schema of the data along with train set, test set and validation set. All four pieces of information become part of the **data validation configuration**. 
+
+    The output of data validation pipeline is train and test sets. This forms the **data validation artifact**.
+
+- The output of data validation pipeline becomes the input of **data transformation** pipeline, which gets further connected to the **model trainer pipleline**. 
